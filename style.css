@@ -1,0 +1,198 @@
+/* Base Styles and Variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --light-gray: #f4f4f4;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #777;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+/* Header Styles - Flexbox */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all var(--transition-speed) ease;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Main Content - CSS Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.text-content {
+    padding: 1rem;
+}
+
+.text-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.text-content p {
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color var(--transition-speed);
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.image-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform var(--transition-speed);
+}
+
+.image-content img:hover {
+    transform: scale(1.02);
+}
+
+/* Footer Styles - Flexbox */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+}
+
+.social-links a {
+    color: white;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    transition: color var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+    .site-header, 
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-nav ul {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+    
+    .main-nav li {
+        margin: 0.5rem 0;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        margin-top: 1rem;
+    }
+}
+
+/* Medium screens (601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .site-header, 
+    .site-footer {
+        flex-direction: row;
+    }
+    
+    .main-nav ul {
+        flex-direction: row;
+    }
+}
+
+/* Large screens (above 1024px) */
+@media (min-width: 1025px) {
+    .site-header {
+        padding: 1.5rem 3rem;
+    }
+    
+    .content-grid {
+        padding: 3rem;
+    }
+    
+    .site-footer {
+        padding: 1.5rem 3rem;
+    }
+}
